@@ -1,13 +1,20 @@
-
-import React from "react";
+import React, { useState } from 'react';
 import './../styles/App.css';
 
-const App = () => {
-  return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
-  )
-}
+const ClickCounter = () => {
+  const [count, setCount] = useState(0);
 
-export default App
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div className="container">
+      <p className="counter-text">Button clicked {count} times</p>
+      <button className="click-button" onClick={handleClick}>Click me</button>
+    </div>
+  );
+};
+
+export default ClickCounter;
+
